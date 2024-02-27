@@ -3,28 +3,29 @@ import React from 'react'
 export default function Summary(props) {
 
 
-  let selectedPlanPrice = props.getPlanPrice(props.selectedPlan);
+  let selectedPlanPrice = props.getPlanPrice(props.selectedPlan); //variable to stock plan selection
 
 
+  // function to calculate total 
   let calculateTotal = () => {
 
-    let total = parseFloat(selectedPlanPrice.replace(/[^0-9.]/g, ''));
+    let total = parseFloat(selectedPlanPrice.replace(/[^0-9.]/g, '')); //removing '$'
   
     total += props.onlineService ? (props.isAnnual ? 10 : 1) : 0;
     total += props.largerStorage ? (props.isAnnual ? 20 : 2) : 0;
     total += props.customizableProfile ? (props.isAnnual ? 20 : 2) : 0;
   
-    return props.isAnnual ? `$${total}/yr` : `$${total}/mo`;
+    return props.isAnnual ? `$${total}/yr` : `$${total}/mo`; //return total
   };
   
 
 
-  let totalCost = calculateTotal();
+  let totalCost = calculateTotal(); //stock result
 
 
   let ChangePlan = () => {
     props.setCurrentStep(2); 
-  };
+  }; // function to change choices ( change button )
 
 
   return (
