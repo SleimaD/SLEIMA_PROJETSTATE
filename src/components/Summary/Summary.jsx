@@ -32,6 +32,7 @@ export default function Summary(props) {
       <h2 className="text-[2.3rem] text-[#002551] font-bold mt-5 max-[400px]:mt-[-3rem] max-[400px]:text-[1.8rem]">Finishing up</h2>
       <p className="mb-10 max-[400px]:mb-4 max-[400px]:text-[0.8rem] max-[400px]:w-[130%]">Double-check everything looks OK before confirming.</p>
 
+        {/* display of summary */}
       <div className="mb-6 bg-gray-100 p-5 rounded-2xl w-[150%] max-[400px]:w-[100%] max-[400px]:mb-2 max-[400px]:p-2">
         <div className="flex justify-between items-center">
           <div className=' flex flex-col items-start'>
@@ -50,6 +51,7 @@ export default function Summary(props) {
             <div className=' w-[90%] h-[1px] bg-[#b3b2b2] ' />
         </div>
 
+        {/* display the right add-ons based on users's choices */}
         {props.onlineService && (
           <div className="flex justify-between">
             <span className="text-[1.3rem] text-[#002551] max-[400px]:text-[0.7rem]">Online service</span>

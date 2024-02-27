@@ -8,6 +8,7 @@ import ThankYou from '../ThankYou/ThankYou'
 
 export default function MultistepContainer() {
 
+    //initializing states
     const [currentStep, setCurrentStep] = useState(1);
     const [isAnnual, setIsAnnual] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState(null);
@@ -20,27 +21,31 @@ export default function MultistepContainer() {
     const [phone, setPhone] = useState('');
 
 
-
+    //function to switch to the next component
     let nextStep = () => {
         if (currentStep < 5) {
             setCurrentStep(currentStep => currentStep + 1);
         }
     };
 
+        //function to switch to the previous component
     let prevStep = () => {
         if (currentStep > 1) {
             setCurrentStep(currentStep => currentStep - 1);
         }
     };
 
+    //function to switch from monthly to yearly
     let toggleBill = () => {
         setIsAnnual(!isAnnual);
     };
 
+    //function to select a plan
     let handleSelectPlan = (plan) => {
         setSelectedPlan(plan);
     };
 
+    //function to return the price from yearly to monthly
     let getPlanPrice = (plan) => {
         let monthlyPrices = { Arcade: '$9/mo', Advanced: '$12/mo', Pro: '$15/mo' };
         let annualPrices = { Arcade: '$90/yr', Advanced: '$120/yr', Pro: '$150/yr' };
@@ -48,6 +53,7 @@ export default function MultistepContainer() {
     };
 
 
+    //hhok to disabled/enable button 'next step'
     useEffect(() => {
         if (currentStep === 1) {
             setIsEnabled(name !== '' && email !== '' && phone !== '');
@@ -66,6 +72,7 @@ export default function MultistepContainer() {
     <div className=' bg-white w-[70%] h-[40rem] rounded-xl p-2 flex gap-5 relative max-[400px]:flex-col max-[400px]:w-[88%] max-[400px]:h-[35rem]'>
         <Steps currentStep={currentStep} setCurrentStep={setCurrentStep} />
         
+        {/* display based on steps */}
         {currentStep === 1 && <InfosForm
             name={name}
             setName={setName}
@@ -73,7 +80,7 @@ export default function MultistepContainer() {
             setEmail={setEmail}
             phone={phone}
             setPhone={setPhone}
-         />}
+         />} 
         {currentStep === 2 && <SelectPlan getPlanPrice={getPlanPrice} handleSelectPlan={handleSelectPlan} selectedPlan={selectedPlan} setSelectedPlan={selectedPlan} isAnnual={isAnnual} setIsAnnual={setIsAnnual} toggleBill={toggleBill} />}
         {currentStep === 3 && <Adds 
             isAnnual={isAnnual}

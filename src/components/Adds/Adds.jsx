@@ -3,7 +3,7 @@ import './Adds.css'
 
 export default function Adds(props) {
 
-
+    // variable that sets prices to monthly or yearly
     let prices = {
         onlineService: props.isAnnual ? '$10/yr' : '$1/mo',
         largerStorage: props.isAnnual ? '$20/yr' : '$2/mo',
@@ -17,6 +17,7 @@ export default function Adds(props) {
 
       <div className="space-y-4 mb-6 flex flex-col max-[400px]:items-center max-[400px]:mb-[2rem]">
         
+        {/* display of add-ons  */}
         <div className={`flex justify-between items-center w-[150%] max-[400px]:w-[125%] max-[400px]:px-2 max-[400px]:p-3 border-gray-500 border-[1px] p-5 px-9 rounded-2xl ${props.onlineService ? 'bg-gray-200 border-purple-700' : ''}`}>
             <div className=' flex items-center gap-5'>
                 <div>

@@ -7,6 +7,7 @@ export default function SelectPlan(props) {
     
   return (
     <div className="flex flex-col p-12 max-[400px]:w-[100%]">
+       {/* component to select plans */}
       <h2 className="text-[2.8rem] font-bold text-[#002551] max-[400px]:text-[1.4rem] max-[400px]:mt-[-4rem]">Select your plan</h2>
       <p className="mb-6 max-[400px]:mb-2 max-[400px]:text-[0.7rem]">You have the option of monthly or yearly billing</p>
       <div className="flex justify-center space-x-4 p-4 max-[400px]:flex-wrap max-[400px]:w-[100%] h-[50%] max-[400px]:p-0 max-[400px]:gap-1">
@@ -56,6 +57,7 @@ export default function SelectPlan(props) {
 
         <div>
             <label class="inline-flex items-center cursor-pointer">
+                {/* input with switch toggle */}
                 <input  type="checkbox" value="" className="sr-only peer"  checked={props.isAnnual} onChange={props.toggleBill} />
                 <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#002551] peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 "></div>
             </label>

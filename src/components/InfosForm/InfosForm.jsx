@@ -11,7 +11,8 @@ export default function (props) {
             <p className=' max-[400px]:w-[150%] max-[400px]:text-[0.9rem]'>please provide your name, email adress, and phone number</p>
 
         </div>
-
+        
+        {/* form to enter user infos */}
         <form className=' flex flex-col gap-5 mt-10 max-[400px]:mt-3  max-[400px]:flex max-[400px]:items-center max-[400px]:gap-2 max-[400px]:ms-10 '>
             <div className=' flex flex-col gap-2 '>
                 <label className=' text-[#002551]  font-medium max-[400px]:text-[0.8rem]'>Your name: &nbsp; {props.name }</label>
