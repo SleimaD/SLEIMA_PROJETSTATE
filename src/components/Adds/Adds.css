@@ -1,0 +1,7 @@
+input[type="checkbox"]:checked + span {
+    background-color: #861caa; 
+    background-image: url('../../assets/icon-checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
