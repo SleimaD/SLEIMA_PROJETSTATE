@@ -105,23 +105,28 @@ export default function MultistepContainer() {
         {currentStep === 5 && <ThankYou/>}
 
         <div className='absolute bottom-3 right-20 flex gap-3'>
+            {/* display 'go back' button only when we're above the first step page */}
             {currentStep > 1 && currentStep < 5 && (
                 <button 
-                    onClick={prevStep}
+                    onClick={prevStep} //go to the previous page 
                         className=' text-[#002551]  text-[1.2rem] font-bold absolute right-[510px] w-[100%] max-[400px]:right-20 max-[400px]:bottom-1 max-[400px]:text-[0.9rem]'
                 >
                     Go Back
                 </button>
             )}
+
+            {/* display 'next step' button to go to the next page */}
             {currentStep < 4 && (
                 <button 
-                    onClick={nextStep}
-                    disabled={!isEnabled}
-                    className={`bg-[#002551] text-white p-3 px-5 rounded-2xl font-bold ${!isEnabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    onClick={nextStep} // go to next page
+                    disabled={!isEnabled} //disable button if conditions not reunited
+                    className={`bg-[#002551] text-white p-3 px-5 rounded-2xl font-bold max-[400px]:p-2 max-[400px]:text-[0.8rem] ${!isEnabled ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                     Next Step
                 </button>
             )}
+
+            {/* display 'confirm' button when we're on the 4th(last) step */}
             {currentStep === 4 && (
                     <button 
                         onClick={nextStep} 
